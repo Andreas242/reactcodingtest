@@ -115,7 +115,6 @@ body {
   font-size: 0.9em;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .app-header h1 {
     font-size: 2em;

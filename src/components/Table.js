@@ -34,7 +34,6 @@ const Table = ({ data = [], loading = false, error = null }) => {
     );
   }
 
-  // Get table headers from the first data object
   const headers = Object.keys(data[0]);
 
   return (
