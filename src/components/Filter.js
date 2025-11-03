@@ -8,7 +8,6 @@ const Filter = ({ onFilterChange, dropdownOptions = [] }) => {
     dropdown: ''
   });
 
-  // Trigger API call whenever filter values change
   useEffect(() => {
     onFilterChange(filters);
   }, [filters, onFilterChange]);
@@ -61,11 +60,7 @@ const Filter = ({ onFilterChange, dropdownOptions = [] }) => {
             className="filter-dropdown"
           >
             <option value="">Select an option...</option>
-            {dropdownOptions.map((option, index) => (
-              <option key={index} value={option.value}>
-                {option.label}
-              </option>
-            ))}
+            {/* Dynamically populate dropdown options */}
           </select>
         </div>
       </div>

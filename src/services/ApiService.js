@@ -1,4 +1,5 @@
 const API_BASE_URL = 'https://jsonplaceholder.typicode.com';
+//posterne ligger i /posts
 
 class ApiService {
   static async fetchDropdownOptions() {
@@ -23,30 +24,7 @@ class ApiService {
 
   static async fetchTableData(filters = {}) {
     try {
-      const response = await fetch(`${API_BASE_URL}/posts`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      let posts = await response.json();
-
-      if (filters.checkbox1) {
-        posts = posts.filter(post => post.userId <= 5);
-      }
-
-      if (filters.checkbox2) {
-        posts = posts.filter(post => post.id <= 50);
-      }
-
-      if (filters.dropdown) {
-        posts = posts.slice(0, 20);
-      }
-
-      return posts.slice(0, 20).map(post => ({
-        id: post.id,
-        title: post.title,
-        body: post.body.substring(0, 100) + '...',
-        userId: post.userId
-      }));
+        // hente data og vise den i tabellen
     } catch (error) {
       console.error('Error fetching table data:', error);
       throw error;

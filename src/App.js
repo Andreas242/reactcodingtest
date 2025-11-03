@@ -47,7 +47,6 @@ function App() {
   }, []);
 
   const handleFilterChange = useCallback((newFilters) => {
-    console.log('Filter changed:', newFilters);
     loadTableData(newFilters);
   }, [loadTableData]);
 
