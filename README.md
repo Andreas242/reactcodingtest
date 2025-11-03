@@ -13,12 +13,14 @@ This is a React-based POC application built for programming test purposes. It de
 ## Components
 
 ### Filter Component
+
 - Two configurable checkboxes
 - Dropdown populated from external API
 - Real-time filter status display
 - Triggers API calls on any change
 
-### Table Component  
+### Table Component
+
 - Dynamic column generation based on data structure
 - Loading spinner during API calls
 - Error handling and display
@@ -26,6 +28,7 @@ This is a React-based POC application built for programming test purposes. It de
 - Hover effects and alternating row colors
 
 ### API Service
+
 - Fetches dropdown options from JSONPlaceholder users API
 - Fetches table data from JSONPlaceholder posts API
 - Simulates filtering based on checkbox and dropdown values
@@ -34,20 +37,21 @@ This is a React-based POC application built for programming test purposes. It de
 ## Getting Started
 
 ### Prerequisites
+
 - Node.js (version 14 or higher)
 - npm or yarn
 
 ### Installation
 
 1. Install dependencies:
-\`\`\`bash
-npm install
-\`\`\`
+   \`\`\`bash
+   npm install
+   \`\`\`
 
 2. Start the development server:
-\`\`\`bash
-npm start
-\`\`\`
+   \`\`\`bash
+   npm start
+   \`\`\`
 
 3. Open your browser and navigate to `http://localhost:3000`
 
@@ -61,7 +65,7 @@ npm run build
 
 - **Dropdown Data**: `https://jsonplaceholder.typicode.com/users`
   - Extracts company names for dropdown options
-- **Table Data**: `https://jsonplaceholder.typicode.com/posts`  
+- **Table Data**: `https://jsonplaceholder.typicode.com/posts`
   - Fetches posts and applies simulated filtering
 
 ## Project Structure
@@ -69,15 +73,15 @@ npm run build
 \`\`\`
 src/
 ├── components/
-│   ├── Filter.js          # Filter component with checkboxes and dropdown
-│   ├── Filter.css         # Filter component styles
-│   ├── Table.js           # Data table component
-│   └── Table.css          # Table component styles
+│ ├── Filter.js # Filter component with checkboxes and dropdown
+│ ├── Filter.css # Filter component styles
+│ ├── Table.js # Data table component
+│ └── Table.css # Table component styles
 ├── services/
-│   └── ApiService.js      # API service for data fetching
-├── App.js                 # Main application component
-├── App.css                # Main application styles
-└── index.js               # Application entry point
+│ └── ApiService.js # API service for data fetching
+├── App.js # Main application component
+├── App.css # Main application styles
+└── index.js # Application entry point
 \`\`\`
 
 ## Technical Details
@@ -98,7 +102,7 @@ src/
 ## Future Enhancements
 
 - Add more sophisticated filtering options
-- Implement pagination for large datasets  
+- Implement pagination for large datasets
 - Add sorting capabilities to table columns
 - Include unit tests and integration tests
 - Add more comprehensive error handling

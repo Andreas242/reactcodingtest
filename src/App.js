@@ -11,7 +11,6 @@ function App() {
   const [error, setError] = useState(null);
   const [currentFilters, setCurrentFilters] = useState({});
 
-  // Load dropdown options on component mount
   useEffect(() => {
     const loadDropdownOptions = async () => {
       try {
@@ -19,7 +18,6 @@ function App() {
         setDropdownOptions(options);
       } catch (err) {
         console.error('Failed to load dropdown options:', err);
-        // Set some fallback options if API fails
         setDropdownOptions([
           { value: 'option1', label: 'Option 1' },
           { value: 'option2', label: 'Option 2' },
@@ -29,17 +27,13 @@ function App() {
     };
 
     loadDropdownOptions();
-    // Load initial table data
     loadTableData({});
   }, []);
-
-  // Function to load table data based on filters
   const loadTableData = useCallback(async (filters) => {
     setLoading(true);
     setError(null);
     
     try {
-      // Add small delay to show loading state
       await ApiService.delay(300);
       const data = await ApiService.fetchTableData(filters);
       setTableData(data);
@@ -52,7 +46,6 @@ function App() {
     }
   }, []);
 
-  // Handle filter changes from Filter component
   const handleFilterChange = useCallback((newFilters) => {
     console.log('Filter changed:', newFilters);
     loadTableData(newFilters);
@@ -79,27 +72,6 @@ function App() {
             loading={loading}
             error={error}
           />
-        </div>
-
-        {/* Debug information */}
-        <div className="debug-info">
-          <details>
-            <summary>Debug Information (Click to expand)</summary>
-            <div className="debug-content">
-              <h4>Current Filters:</h4>
-              <pre>{JSON.stringify(currentFilters, null, 2)}</pre>
-              
-              <h4>Dropdown Options:</h4>
-              <pre>{JSON.stringify(dropdownOptions, null, 2)}</pre>
-              
-              <h4>API Status:</h4>
-              <ul>
-                <li>Loading: {loading ? 'Yes' : 'No'}</li>
-                <li>Error: {error || 'None'}</li>
-                <li>Data Count: {tableData.length}</li>
-              </ul>
-            </div>
-          </details>
         </div>
       </main>
 
