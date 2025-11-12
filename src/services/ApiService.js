@@ -30,15 +30,16 @@ class ApiService {
       let posts = await response.json();
 
       if (filters.checkbox1) {
-        posts = posts.filter(post => post.userId <= 5);
+        posts = posts.filter(post => post.userId === 1);
       }
 
       if (filters.checkbox2) {
-        posts = posts.filter(post => post.id <= 50);
+        posts = posts.filter(post => post.id <= 4);
       }
 
       if (filters.dropdown) {
-        posts = posts.slice(0, 20);
+        posts = posts.slice(0,5);
+        console.log(posts);
       }
 
       return posts.slice(0, 20).map(post => ({
