@@ -34,7 +34,8 @@ const Table = ({ data = [], loading = false, error = null }) => {
     );
   }
 
-  const headers = Object.keys(data[0]);
+  // TODO: Dynamically generate table headers based on data keys
+  const headers = {};
 
   return (
     <div className="table-container">

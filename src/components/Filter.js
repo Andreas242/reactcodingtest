@@ -38,7 +38,7 @@ const Filter = ({ onFilterChange, dropdownOptions = [] }) => {
               checked={filters.checkbox1}
               onChange={() => handleCheckboxChange('checkbox1')}
             />
-            <span>Filter Option 1</span>
+            <span>Users with ID 1</span>
           </label>
           
           <label className="checkbox-label">
@@ -47,7 +47,7 @@ const Filter = ({ onFilterChange, dropdownOptions = [] }) => {
               checked={filters.checkbox2}
               onChange={() => handleCheckboxChange('checkbox2')}
             />
-            <span>Filter Option 2</span>
+            <span>Users with ID 2</span>
           </label>
         </div>
 
@@ -68,10 +68,7 @@ const Filter = ({ onFilterChange, dropdownOptions = [] }) => {
       <div className="filter-status">
         <small>
           Active filters: 
-          {filters.checkbox1 && ' Option1'}
-          {filters.checkbox2 && ' Option2'}
-          {filters.dropdown && ` Category: ${filters.dropdown}`}
-          {!filters.checkbox1 && !filters.checkbox2 && !filters.dropdown && ' None'}
+          {/* Display active filters */}
         </small>
       </div>
     </div>

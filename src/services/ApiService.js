@@ -1,5 +1,4 @@
 const API_BASE_URL = 'https://jsonplaceholder.typicode.com';
-//posterne ligger i /posts
 
 class ApiService {
   static async fetchDropdownOptions() {
@@ -24,7 +23,8 @@ class ApiService {
 
   static async fetchTableData(filters = {}) {
     try {
-        // hente data og vise den i tabellen
+        // fetch the data and display it in the table
+        //the data we want is in /posts
     } catch (error) {
       console.error('Error fetching table data:', error);
       throw error;
