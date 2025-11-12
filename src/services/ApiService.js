@@ -34,7 +34,7 @@ class ApiService {
       }
 
       if (filters.checkbox2) {
-        posts = posts.filter(post => post.id <= 4);
+        posts = posts.filter(post => post.userId === 2);
       }
 
       if (filters.dropdown) {
