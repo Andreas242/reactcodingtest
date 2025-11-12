@@ -25,6 +25,12 @@ class ApiService {
     try {
         // fetch the data and display it in the table
         //the data we want is in /posts
+        // if filters has checkbox1 true, we filter for userId 1
+        // if filters has checkbox2 true, we filter for userId 2
+        // if both are true, we get both userId 1 and 2
+        // if none are true, we get all data
+        let url = `${API_BASE_URL}/posts`;
+        const params = new URLSearchParams();
     } catch (error) {
       console.error('Error fetching table data:', error);
       throw error;
