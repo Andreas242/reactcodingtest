@@ -25,14 +25,23 @@ const Table = ({ data = [], loading = false, error = null }) => {
   return (
     <div className="table-container">
       {/* La til screen reader announce ved statusoppdatering */}
-      <div aria-atomic="true" role="alert" className="visually-hidden">
+      <div>
         {showSpinner && (
           <div className="loading-spinner">
             <div className="spinner"></div>
+            <p className="flex justify-center" aria-hidden="true">
+              {screenreaderMsg}
+            </p>
           </div>
         )}
 
-        <p className="flex justify-center">{screenreaderMsg}</p>
+        <p
+          aria-atomic="true"
+          role="alert"
+          className="flex justify-center visually-hidden"
+        >
+          {screenreaderMsg}
+        </p>
       </div>
 
       {/* Conditional rendering når vi har data */}
