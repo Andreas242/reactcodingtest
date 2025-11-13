@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import './Filter.css';
+import React, { useState, useEffect } from "react";
+import "./Filter.css";
 
 const Filter = ({ onFilterChange, dropdownOptions = [] }) => {
   const [filters, setFilters] = useState({
     checkbox1: false,
     checkbox2: false,
-    dropdown: ''
+    dropdown: "",
   });
 
   useEffect(() => {
@@ -13,43 +13,45 @@ const Filter = ({ onFilterChange, dropdownOptions = [] }) => {
   }, [filters, onFilterChange]);
 
   const handleCheckboxChange = (checkboxName) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      [checkboxName]: !prev[checkboxName]
+      [checkboxName]: !prev[checkboxName],
     }));
   };
 
   const handleDropdownChange = (event) => {
-    setFilters(prev => ({
+    setFilters((prev) => ({
       ...prev,
-      dropdown: event.target.value
+      dropdown: event.target.value,
     }));
   };
 
   return (
     <div className="filter-container">
-      <h3>Filter Options</h3>
-      
+      {/* Riktig headingnivå */}
+      <h2>Filter Options</h2>
       <div className="filter-section">
-        <div className="checkbox-group">
+        {/* Semantisk element med informasjon til checkboxer */}
+        <fieldset className="checkbox-group">
+          <legend>Filtrer på bruker id</legend>
           <label className="checkbox-label">
             <input
               type="checkbox"
               checked={filters.checkbox1}
-              onChange={() => handleCheckboxChange('checkbox1')}
+              onChange={() => handleCheckboxChange("checkbox1")}
             />
             <span>Users with ID 1</span>
           </label>
-          
+
           <label className="checkbox-label">
             <input
               type="checkbox"
               checked={filters.checkbox2}
-              onChange={() => handleCheckboxChange('checkbox2')}
+              onChange={() => handleCheckboxChange("checkbox2")}
             />
             <span>Users with ID 2</span>
           </label>
-        </div>
+        </fieldset>
 
         <div className="dropdown-group">
           <label htmlFor="filter-dropdown">Category:</label>
@@ -67,7 +69,7 @@ const Filter = ({ onFilterChange, dropdownOptions = [] }) => {
 
       <div className="filter-status">
         <small>
-          Active filters: 
+          Active filters:
           {/* Display active filters */}
         </small>
       </div>
