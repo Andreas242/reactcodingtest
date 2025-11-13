@@ -23,12 +23,13 @@ class ApiService {
 
   static async fetchTableData(filters = {}) {
     try {
-        // fetch the data and display it in the table
+        //TODO: fetch the data and display it in the table
         //the data we want is in /posts
-        // if filters has checkbox1 true, we filter for userId 1
-        // if filters has checkbox2 true, we filter for userId 2
+        // if filters has checkbox1 true, we filter (only show) data for userId 1
+        // if filters has checkbox2 true, we filter (only show) data for userId 2
         // if both are true, we get both userId 1 and 2
         // if none are true, we get all data
+        // feel free to rename the filter keys/names as needed/appropriate
         let url = `${API_BASE_URL}/posts`;
         const params = new URLSearchParams();
     } catch (error) {

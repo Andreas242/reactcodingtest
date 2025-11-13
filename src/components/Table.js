@@ -1,6 +1,7 @@
 import React from 'react';
 import './Table.css';
-
+// TODO: we need to fix the CSS so that the table header stays fixed while scrolling the data rows 
+// and that the page layout looks good with header, filter and table components
 const Table = ({ data = [], loading = false, error = null }) => {
   if (loading) {
     return (
