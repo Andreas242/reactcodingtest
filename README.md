@@ -1,6 +1,6 @@
-# React Coding Test - Candidate Instructions
+# React Coding Test - Audun 
 
-Welcome to the React Coding Test! This project contains a working React application with filtering and table display functionality. Your task is to enhance this application by implementing the features described below.
+Welcome to the React Coding Test! This project contains a working React application with filtering and table display functionality. Your task is to enhance this application by implementing the features described below - please communicate as much as possible and talk alound while you work. Feel free to ask questions/google etc. No AI allowed so please turn off all AI-tools (which is funny since most of this text is AI-generated).
 
 ## 📋 Current Application Overview
 
